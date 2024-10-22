@@ -1,3 +1,6 @@
+# *********** nome do estudante: Antonewton Emanuel Lungoge Quima ****************************
+# *********** número de matrícula : 20210907 ******************
+
 from PIL import Image, ImageDraw
 import os
 
@@ -17,25 +20,27 @@ draw.rectangle([550, 225, 585, 285], fill="yellow")  # Parede lateral direita
 # Desenhar o telhado (triângulo acima da parede principal)
 draw.polygon([(450, 225), (500, 150), (550, 225)], fill="red")  # Telhado frontal
 
-# Pequeno triângulo superior (lado direito)
-draw.polygon([(550, 225), (585, 185), (585, 225)], fill="white")
+# Pequeno triângulo superior
+draw.polygon([(550, 225), (585, 205), (585, 225)], fill="yellow")
 
-# Pequeno triângulo inferior (lado direito)
+# Pequeno triângulo inferior
 draw.polygon([(550, 285), (585, 255), (585, 285)], fill="white")
 
-# Parte direita do telhado
-# draw.polygon([(550, 225), (500, 150), (585, 185)], fill="black")  # Telhado lateral direito
+# Parte direita do telhado, um quadrilatero
+draw.polygon([(550, 225), (500, 150),(550, 150), (585, 205)], fill="gray") # Telhado lateral direito
 
 
-draw.polygon([(550, 225), (500, 150),(550, 150), (585, 205)], fill="gray")  # Quadrilátero de 4 faces
+# contornos pra dar realce
 
-
-
-# Ajustar contornos para maior clareza (opcional)
 draw.line([(450, 225), (500, 150), (550, 225)], fill="black", width=1)  # Contorno do telhado frontal
-# draw.line([(550, 225), (585, 185)], fill="black", width=1)  # Contorno do telhado lateral
+draw.line([(550, 225), (585, 205)], fill="black", width=1)  # Contorno do telhado lateral
 draw.line([(585, 205), (585, 225)], fill="black", width=1)  # Contorno lateral superior
 draw.line([(550, 285), (585, 255)], fill="black", width=1)  # Contorno lateral inferior
+
+# linhas para dar enfase a imagem 3d
+draw.line([(300, 100), (300, 300)], fill="black", width=1)  # Contorno do telhado lateral
+
+
 
 pasta = os.path.expanduser("/home/antonewton/Documents/ann.tech")
 
