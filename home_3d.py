@@ -9,16 +9,33 @@ img = Image.new("RGB", (largura, altura), "white")
 draw = ImageDraw.Draw(img)
 
 # Desenhar a parte inferior da casa
-draw.rectangle([450, 225, 550, 285], fill="blue")
+draw.rectangle([450, 225, 550, 285], fill="blue")  # Parede principal
 
-draw.rectangle([550, 185, 585, 285], fill="yellow")
+# Desenhar a parte lateral direita da casa
+draw.rectangle([550, 225, 585, 285], fill="yellow")  # Parede lateral direita
+
+# Desenhar o telhado (triângulo acima da parede principal)
+draw.polygon([(450, 225), (500, 150), (550, 225)], fill="red")  # Telhado frontal
+
+# Pequeno triângulo superior (lado direito)
+draw.polygon([(550, 225), (585, 185), (585, 225)], fill="white")
+
+# Pequeno triângulo inferior (lado direito)
+draw.polygon([(550, 285), (585, 255), (585, 285)], fill="white")
+
+# Parte direita do telhado
+# draw.polygon([(550, 225), (500, 150), (585, 185)], fill="black")  # Telhado lateral direito
+
+
+draw.polygon([(550, 225), (500, 150),(550, 150), (585, 205)], fill="gray")  # Quadrilátero de 4 faces
 
 
 
-# Desenhar o telhado (triângulo acima da parede superior)
-draw.polygon([(450, 225), (500, 150), (550, 225)], fill="red")  # Pontos do triângulo
-
-draw.polygon([(550, 225), (550, 185), (585, 185)], fill="white")  # Pontos do triângulo
+# Ajustar contornos para maior clareza (opcional)
+draw.line([(450, 225), (500, 150), (550, 225)], fill="black", width=1)  # Contorno do telhado frontal
+# draw.line([(550, 225), (585, 185)], fill="black", width=1)  # Contorno do telhado lateral
+draw.line([(585, 205), (585, 225)], fill="black", width=1)  # Contorno lateral superior
+draw.line([(550, 285), (585, 255)], fill="black", width=1)  # Contorno lateral inferior
 
 pasta = os.path.expanduser("/home/antonewton/Documents/ann.tech")
 
